@@ -73,6 +73,46 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+//Step 6: define the functions for the tileset animation
+static void TilesetAnim_Test(u16 timer);
+static void QueueAnimTiles_Test_CenterMartDoor(u16 timer);
+static void AppendTilesetAnimToBuffer(const u16 *src, u16 *dest, u16 size);
+
+// Step 1: Defining the frames, pointing to the images for each frame
+const u16 gtilesetAnims_test_CenterMartDoor_Frame0[] = INCGFX_U16("data/tilesets/secondary/test/anim/center_mart_door/0.png", ".4bpp");
+const u16 gtilesetAnims_test_CenterMartDoor_Frame1[] = INCGFX_U16("data/tilesets/secondary/test/anim/center_mart_door/1.png", ".4bpp");
+const u16 gtilesetAnims_test_CenterMartDoor_Frame2[] = INCGFX_U16("data/tilesets/secondary/test/anim/center_mart_door/2.png", ".4bpp");
+const u16 gtilesetAnims_test_CenterMartDoor_Frame3[] = INCGFX_U16("data/tilesets/secondary/test/anim/center_mart_door/3.png", ".4bpp");
+
+// Step 2: Defining the array of frames for the animation
+const u16 *const gTilesetAnims_test_CenterMartDoor[] = {
+    gtilesetAnims_test_CenterMartDoor_Frame0,
+    gtilesetAnims_test_CenterMartDoor_Frame1,
+    gtilesetAnims_test_CenterMartDoor_Frame2,
+    gtilesetAnims_test_CenterMartDoor_Frame3
+};
+
+//Step 3: Initialize the test tileset animation
+void InitTilesetAnim_Test(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_Test;
+}
+
+//Step 4: Define the callback function for the test tileset animation
+static void TilesetAnim_Test(u16 timer)
+{
+    if (timer % 16 == 0) //Depending on the number, the animation will be faster or slower. Higher number = slower animation
+        QueueAnimTiles_Test_CenterMartDoor(timer >> 4); //The number here depends depends on the number above, specifically the power of 2. For example, if the number above is 16, this number should be 4 (2^4 = 16). If the number above is 32, this number should be 5 (2^5 = 32). And so on.
+}
+
+//Step 5: Define the function to queue the animation tiles for the test tileset animation
+static void QueueAnimTiles_Test_CenterMartDoor(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_test_CenterMartDoor);
+    AppendTilesetAnimToBuffer(gTilesetAnims_test_CenterMartDoor[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x3F0)), 0x80);
+}
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCGFX_U16("data/tilesets/primary/general/anim/flower/1.png", ".4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCGFX_U16("data/tilesets/primary/general/anim/flower/0.png", ".4bpp");

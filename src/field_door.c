@@ -169,6 +169,8 @@ static const u8 sDoorAnimTiles_Teleporter[] = INCGFX_U8("graphics/door_anims/tel
 static const u8 sDoorAnimTiles_TrainerTowerLobbyElevator[] = INCGFX_U8("graphics/door_anims/trainer_tower_lobby_elevator.png", ".4bpp");
 static const u8 sDoorAnimTiles_TrainerTowerRoofElevator[] = INCGFX_U8("graphics/door_anims/trainer_tower_roof_elevator.png", ".4bpp");
 
+static const u8 sDoorAnimTiles_CenterMartAnimation[] = INCGFX_U8("graphics/door_anims/center_mart.png", ".4bpp");
+
 #endif // IS_FRLG
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =

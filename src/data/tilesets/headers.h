@@ -1550,5 +1550,5 @@ const struct Tileset gTileset_Test =
     .palettes = gTilesetPalettes_Test,
     .metatiles = gMetatiles_Test,
     .metatileAttributes = gMetatileAttributes_Test,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Test,
 };

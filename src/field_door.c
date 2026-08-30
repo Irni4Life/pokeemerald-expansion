@@ -31,6 +31,8 @@ struct DoorAnimFrame
 
 static bool8 ShouldUseMultiCorridorDoor(void);
 
+static const u8 sDoorAnimTiles_CenterMartAnimation[] = INCGFX_U8("graphics/door_anims/center_mart.png", ".4bpp");
+
 static const u8 sDoorAnimTiles_Littleroot[] = INCGFX_U8("graphics/door_anims/littleroot.png", ".4bpp");
 static const u16 sDoorNullPalette1[16] = {};
 static const u8 sDoorAnimTiles_BirchsLab[] = INCGFX_U8("graphics/door_anims/birchs_lab.png", ".4bpp");
@@ -169,8 +171,6 @@ static const u8 sDoorAnimTiles_Teleporter[] = INCGFX_U8("graphics/door_anims/tel
 static const u8 sDoorAnimTiles_TrainerTowerLobbyElevator[] = INCGFX_U8("graphics/door_anims/trainer_tower_lobby_elevator.png", ".4bpp");
 static const u8 sDoorAnimTiles_TrainerTowerRoofElevator[] = INCGFX_U8("graphics/door_anims/trainer_tower_roof_elevator.png", ".4bpp");
 
-static const u8 sDoorAnimTiles_CenterMartAnimation[] = INCGFX_U8("graphics/door_anims/center_mart.png", ".4bpp");
-
 #endif // IS_FRLG
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
@@ -240,6 +240,8 @@ static const struct DoorAnimFrame sDoorAnimFrames_CloseLargeFrlg[] = {
     {4, -1},
     {}
 };
+
+static const u8 sDoorAnimPalettes_CenterMartAnimation[] = {7, 7, 7, 7, 7, 7, 7, 7};
 
 static const u8 sDoorAnimPalettes_General[] = {1, 1, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_PokeCenter[] = {1, 1, 1, 1, 1, 1, 1, 1};
@@ -388,6 +390,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_BattleTent_Door,                              &gTileset_BattleTent, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTentInterior, sDoorAnimPalettes_BattleTentInterior},
     {METATILE_TrainerHill_Door_Elevator_Lobby,              &gTileset_TrainerHill, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillLobbyElevator, sDoorAnimPalettes_TrainerHillLobbyElevator},
     {METATILE_TrainerHill_Door_Elevator_Roof,               &gTileset_TrainerHill, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillRoofElevator, sDoorAnimPalettes_TrainerHillRoofElevator},
+    {METATILE_Test_Center_Mart,                             &gTileset_Test, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_CenterMartAnimation, sDoorAnimPalettes_CenterMartAnimation},
 #else
     {METATILE_GeneralFrlg_Door,                             &gTileset_General_Frlg, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_GeneralFrlg, sDoorAnimPalettes_GeneralFrlg},
     {METATILE_GeneralFrlg_SlidingSingleDoor,                &gTileset_General_Frlg, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_SlidingSingle, sDoorAnimPalettes_SlidingSingle},

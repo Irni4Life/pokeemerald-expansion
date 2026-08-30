@@ -961,6 +961,7 @@
 #define METATILE_SootopolisGym_Stairs       0x207
 
 // gTileset_Test
+#define METATILE_Test_Center_Mart    0x217
 #define METATILE_Test_Door_PokeMart  0x207
 
 // gTileset_TrainerHill

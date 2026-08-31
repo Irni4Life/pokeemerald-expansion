@@ -105,7 +105,7 @@
       "name": "LittlerootTown_Layout",
       "width": 20,
       "height": 30,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_GeneralRegion",
       "secondary_tileset": "gTileset_Test",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown/map.bin",

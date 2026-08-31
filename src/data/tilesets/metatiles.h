@@ -411,3 +411,6 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 
 const u16 gMetatiles_Test[] = INCBIN_U16("data/tilesets/secondary/test/metatiles.bin");
 const u16 gMetatileAttributes_Test[] = INCBIN_U16("data/tilesets/secondary/test/metatile_attributes.bin");
+
+const u16 gMetatiles_GeneralRegion[] = INCBIN_U16("data/tilesets/primary/general_region/metatiles.bin");
+const u16 gMetatileAttributes_GeneralRegion[] = INCBIN_U16("data/tilesets/primary/general_region/metatile_attributes.bin");
